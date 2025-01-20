@@ -1,9 +1,9 @@
 import React from 'react';
-import ConsultaRNCApp from './ConsultaRNCApp.jsx';  // Agrega la extensión .jsx
+import ConsultaRNCApp from './ConsultaRNCApp';
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-100">
       <ConsultaRNCApp />
     </div>
   );
