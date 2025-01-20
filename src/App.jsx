@@ -6,6 +6,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const searchContribuyentes = async (searchTerm) => {
+    console.log('Iniciando búsqueda:', searchTerm);
     if (!searchTerm.trim()) return;
     
     setLoading(true);
