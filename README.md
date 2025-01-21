@@ -94,9 +94,7 @@ Vercel
 TailwindCSS
 Node.js
 
-📝 Licencia
-MIT
-🤝 Contribuir
+
 
 Fork el proyecto
 Crea tu rama de características (git checkout -b feature/AmazingFeature)
