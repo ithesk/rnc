@@ -8,8 +8,8 @@ API y cliente web para consultar el Registro Nacional del Contribuyente (RNC) de
 
 ##  vivo 🚀
 
-* **Interfaz Web:** [https://rnc-2jd52nrj2-ithesks-projects.vercel.app](https://rnc-2jd52nrj2-ithesks-projects.vercel.app)
-* **Endpoint API:** `https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes`
+* **Interfaz Web:** [https://rnc-lake.vercel.app](https://rnc-lake.vercel.app)
+* **Endpoint API:** `https://rnc-lake.vercel.app/api/contribuyentes`
 
 ## Características 📋
 
@@ -54,7 +54,7 @@ GET /api/contribuyentes?q=TERMINO_BUSQUEDA
 
 #### JavaScript/Node.js
 ```javascript
-const response = await fetch('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=BANCO');
+const response = await fetch('https://rnc-lake.vercel.app/api/contribuyentes?q=BANCO');
 const data = await response.json();
 console.log(data.results);
 ```
@@ -62,7 +62,7 @@ console.log(data.results);
 #### PHP
 ```php
 <?php
-$response = file_get_contents('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=BANCO');
+$response = file_get_contents('https://rnc-lake.vercel.app/api/contribuyentes?q=BANCO');
 $data = json_decode($response, true);
 print_r($data['results']);
 ```
@@ -71,7 +71,7 @@ print_r($data['results']);
 ```python
 import requests
 
-response = requests.get('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=BANCO')
+response = requests.get('https://rnc-lake.vercel.app/api/contribuyentes?q=BANCO')
 data = response.json()
 print(data['results'])
 ```
