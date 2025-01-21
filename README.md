@@ -1,130 +1,149 @@
-RNC API y Cliente Web - Consulta de Contribuyentes
-Este proyecto proporciona una API y una interfaz web para consultar información de contribuyentes utilizando su RNC (Registro Nacional del Contribuyente) o nombre.
+# Consulta RNC - DGII República Dominicana
 
-<img width="1675" alt="Image" src="https://github.com/user-attachments/assets/cee3d991-57c1-402c-9aeb-2909448bf2b0" />
+<div align="center">
+  <img width="1675" alt="Image" src="https://github.com/user-attachments/assets/cee3d991-57c1-402c-9aeb-2909448bf2b0" />
+</div>
 
+API y cliente web para consultar el Registro Nacional del Contribuyente (RNC) de la Dirección General de Impuestos Internos (DGII) de la República Dominicana.
 
+##  vivo 🚀
 
-Frontend: https://rnc-2jd52nrj2-ithesks-projects.vercel.app
-API Endpoint: https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes
+* **Interfaz Web:** [https://rnc-2jd52nrj2-ithesks-projects.vercel.app](https://rnc-2jd52nrj2-ithesks-projects.vercel.app)
+* **Endpoint API:** `https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes`
 
-📋 Características
+## Características 📋
 
-Búsqueda por RNC o nombre
-Resultados en tiempo real
-API RESTful
-Interfaz responsiva
-Indicadores de estado del contribuyente
+* Consulta de contribuyentes por RNC o razón social
+* Verificación de estado del contribuyente
+* API REST pública y gratuita
+* Interfaz web responsive
+* Resultados en tiempo real
+* Sin límite de consultas
+* Datos oficiales de la DGII
 
-🔍 Uso de la API
-Endpoint de búsqueda
-httpCopyGET /api/contribuyentes?q=TERMINO_BUSQUEDA
-Parámetros
-ParámetroTipoDescripciónqstringTérmino de búsqueda (RNC o nombre)
-Ejemplo de respuesta
-jsonCopy{
+## Uso de la API 🔍
+
+### Endpoint de consulta
+
+```http
+GET /api/contribuyentes?q=TERMINO_BUSQUEDA
+```
+
+### Parámetros
+
+| Parámetro | Tipo | Descripción |
+|-----------|------|-------------|
+| `q` | `string` | RNC o nombre del contribuyente |
+
+### Ejemplo de respuesta
+
+```json
+{
   "results": [
     {
       "ruc": "123456789",
-      "nombre": "EMPRESA EJEMPLO",
+      "nombre": "EMPRESA EJEMPLO SRL",
       "estado": "ACTIVO",
       "tipo": "NORMAL"
     }
   ]
 }
-Ejemplos de uso
-cURL
-bashCopycurl "https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=JUAN"
-JavaScript (Fetch)
-javascriptCopyconst response = await fetch('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=JUAN');
+```
+
+### Ejemplos de implementación
+
+#### JavaScript/Node.js
+```javascript
+const response = await fetch('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=BANCO');
 const data = await response.json();
 console.log(data.results);
-Python (Requests)
-pythonCopyimport requests
+```
 
-response = requests.get('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=JUAN')
-data = response.json()
-print(data['results'])
-PHP
-phpCopy<?php
-$response = file_get_contents('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=JUAN');
+#### PHP
+```php
+<?php
+$response = file_get_contents('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=BANCO');
 $data = json_decode($response, true);
 print_r($data['results']);
-🛠️ Instalación local
+```
 
-Clona el repositorio
+#### Python
+```python
+import requests
 
-bashCopygit clone https://github.com/ithesk/rnc.git
+response = requests.get('https://rnc-2jd52nrj2-ithesks-projects.vercel.app/api/contribuyentes?q=BANCO')
+data = response.json()
+print(data['results'])
+```
+
+## Instalación local 🛠️
+
+1. Clona el repositorio
+```bash
+git clone https://github.com/ithesk/rnc.git
 cd rnc
+```
 
-Instala las dependencias
+2. Instala dependencias
+```bash
+npm install
+```
 
-bashCopynpm install
+3. Configura MongoDB
+```bash
+cp .env.example .env
+# Añade tu URI de MongoDB en .env
+```
 
-Configura las variables de entorno
+4. Inicia el servidor
+```bash
+npm run dev
+```
 
-bashCopycp .env.example .env
-# Edita .env con tus credenciales de MongoDB
+## Tecnologías utilizadas 💻
 
-Inicia el servidor de desarrollo
+* React + Vite
+* MongoDB Atlas
+* Node.js
+* Vercel
+* TailwindCSS
 
-bashCopynpm run dev
-🔧 Configuración de MongoDB
+## Estado del servicio 🚨
 
-Crea una cuenta en MongoDB Atlas
-Crea un nuevo cluster
-Configura la variable de entorno MONGODB_URI con tu string de conexión
+* ✅ API: Operativa
+* ✅ Base de datos: Actualizada
+* ✅ Frontend: Operativo
 
-📦 Estructura del proyecto
-Copyrnc/
-├── api/
-│   └── contribuyentes.js    # API endpoint
-├── src/
-│   ├── App.jsx             # Componente principal
-│   ├── main.jsx           # Punto de entrada
-│   └── index.css          # Estilos globales
-├── scripts/
-│   └── load-data.js       # Script para cargar datos
-├── vercel.json            # Configuración de Vercel
-└── package.json
-💻 Tecnologías utilizadas
+## Uso libre y gratuito ⚖️
 
-React
-Vite
-MongoDB
-Vercel
-TailwindCSS
-Node.js
+Este proyecto es de uso libre y gratuito. Puedes:
+* Usar la API en tus aplicaciones
+* Modificar el código
+* Distribuir el código
+* Uso comercial permitido
 
+Sin necesidad de atribución ni permisos adicionales.
 
+## Contribuir 🤝
 
-Fork el proyecto
-Crea tu rama de características (git checkout -b feature/AmazingFeature)
-Commit tus cambios (git commit -m 'Add some AmazingFeature')
-Push a la rama (git push origin feature/AmazingFeature)
-Abre un Pull Request
+Las contribuciones son bienvenidas. Puedes:
+1. Hacer fork del proyecto
+2. Crear una rama para tu funcionalidad (`git checkout -b feature/NuevaFuncionalidad`)
+3. Commit (`git commit -m 'Agrega nueva funcionalidad'`)
+4. Push (`git push origin feature/NuevaFuncionalidad`)
+5. Abrir un Pull Request
 
-⚡ API Rate Limits
+## Contacto y soporte 📫
 
-100 solicitudes por minuto por IP
-1000 solicitudes por día por IP
+* GitHub: [@ithesk](https://github.com/ithesk)
+* Proyecto: [https://github.com/ithesk/rnc](https://github.com/ithesk/rnc)
+* Reportar problemas: [https://github.com/ithesk/rnc/issues](https://github.com/ithesk/rnc/issues)
 
-🚨 Estado de los servicios
+## Agradecimientos 🙏
 
-✅ API: Operativa
-✅ Frontend: Operativo
-✅ Base de datos: Operativa
+* [DGII República Dominicana](https://dgii.gov.do/) por proporcionar los datos
+* Comunidad de desarrolladores de República Dominicana
 
-📫 Contacto
+---
 
-Proyecto Link: https://github.com/ithesk/rnc
-Issue Tracker: https://github.com/ithesk/rnc/issues
-
-🙏 Agradecimientos
-
-DGII por proporcionar los datos
-Contribuidores del proyecto
-Comunidad de desarrolladores
-
-
-⌨️ con ❤️ por ithesk
+Hecho con ❤️ en República Dominicana por [ithesk](https://github.com/ithesk)
