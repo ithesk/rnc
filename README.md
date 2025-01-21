@@ -1,6 +1,8 @@
 RNC API y Cliente Web - Consulta de Contribuyentes
 Este proyecto proporciona una API y una interfaz web para consultar información de contribuyentes utilizando su RNC (Registro Nacional del Contribuyente) o nombre.
 
+<img width="1675" alt="Image" src="https://github.com/user-attachments/assets/cee3d991-57c1-402c-9aeb-2909448bf2b0" />
+
 🚀 Demo en vivo
 
 Frontend: https://rnc-2jd52nrj2-ithesks-projects.vercel.app
